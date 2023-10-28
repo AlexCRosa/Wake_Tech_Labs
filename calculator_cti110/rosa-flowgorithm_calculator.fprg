@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-22 08:56:31 PM"/>
+        <attribute name="created" value="YWxleF87QUxFWExBUFRPUDsyMDIzLTEwLTIyOzA4OjIxOjQxIFBNOzI1NTU="/>
+        <attribute name="edited" value="YWxleF87QUxFWExBUFRPUDsyMDIzLTEwLTIyOzA4OjU2OjMxIFBNOzE7MjY3MA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Alex Cesar Rosa &#13;&#10;2023FA.CTI.110.0003"/>
+            <comment text="Test cases:&#13;&#10;4+2=6&#13;&#10;3*2=6&#13;&#10;6/2=3&#13;&#10;6 / 0 = Division by zero is not allowed."/>
+            <declare name="num1" type="Integer" array="False" size=""/>
+            <output expression="&quot;What's the first number?&quot;" newline="True"/>
+            <input variable="num1"/>
+            <declare name="operator" type="String" array="False" size=""/>
+            <output expression="&quot;What's the operator for the operation? ( + , - , * , / )&quot;" newline="True"/>
+            <input variable="operator"/>
+            <declare name="num2" type="Integer" array="False" size=""/>
+            <output expression="&quot;What's the second number?&quot;" newline="True"/>
+            <input variable="num2"/>
+            <declare name="result" type="Integer" array="False" size=""/>
+            <if expression="operator = &quot;+&quot;">
+                <then>
+                    <assign variable="result" expression="num1 + num2"/>
+                    <output expression="result" newline="True"/>
+                </then>
+                <else>
+                    <if expression="operator = &quot;-&quot;">
+                        <then>
+                            <assign variable="result" expression="num1 - num2"/>
+                            <output expression="result" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="operator = &quot;*&quot;">
+                                <then>
+                                    <assign variable="result" expression="num1 * num2"/>
+                                    <output expression="result" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="operator = &quot;/&quot;">
+                                        <then>
+                                            <if expression="num2 != 0">
+                                                <then>
+                                                    <assign variable="result" expression="num1 / num2"/>
+                                                    <output expression="result" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;Division by zero is not allowed.&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

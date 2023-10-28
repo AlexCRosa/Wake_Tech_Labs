@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="alex_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-28 09:52:20 AM"/>
+        <attribute name="created" value="YWxleF87QUxFWExBUFRPUDsyMDIzLTEwLTI4OzA5OjA0OjM0IEFNOzI1NTA="/>
+        <attribute name="edited" value="YWxleF87QUxFWExBUFRPUDsyMDIzLTEwLTI4OzA5OjUyOjIwIEFNOzE7MjY1Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Alex Cesar Rosa&#13;&#10;2023FA.CTI.110.0003"/>
+            <comment text="Test cases:&#13;&#10;&#13;&#10;guessedNumber == randomNumber = &quot;Well done! You hit the nail on the head.&quot;&#13;&#10;&#13;&#10;guessedNumber != randomNumber = &quot;Not this time! Guess another number between 1 and 10?&quot;&#13;&#10;&#13;&#10;guessedNumber == -999 = &quot;See you later!"/>
+            <declare name="randomNumber" type="Integer" array="False" size=""/>
+            <assign variable="randomNumber" expression="Random(10) + 1"/>
+            <output expression="&quot;Guess a number from 1 to 10?&quot;" newline="True"/>
+            <declare name="guessedNumber" type="Integer" array="False" size=""/>
+            <input variable="guessedNumber"/>
+            <while expression="guessedNumber != randomNumber">
+                <output expression="&quot;Not this time! Guess another number between 1 and 10?&quot;" newline="True"/>
+                <input variable="guessedNumber"/>
+                <if expression="guessedNumber = -999">
+                    <then>
+                        <output expression="&quot;See you later!&quot;" newline="True"/>
+                        <breakpoint expression="" always="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </while>
+            <output expression="&quot;Well done! You hit the nail on the head.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
