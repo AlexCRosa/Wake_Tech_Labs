@@ -2,13 +2,10 @@ import random
 random.seed()   #Prepare random number generator
 
 # Alex Cesar Rosa
-# 2023FA.CTI.110.0003
+
 # Test cases:
-# 
 # guessedNumber == randomNumber = "Well done! You hit the nail on the head."
-# 
 # guessedNumber != randomNumber = "Not this time! Guess another number between 1 and 10?"
-# 
 # guessedNumber == -999 = "See you later!
 
 randomNumber = int(random.random() * 10) + 1
