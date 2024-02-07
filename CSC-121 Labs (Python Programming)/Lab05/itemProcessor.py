@@ -41,7 +41,7 @@ def get_item_total(num_items, unit_price, discount_threshold):
 
     # Check if the discount is applied
     if num_items >= discount_threshold:
-        item_total_cost = item_total_cost - 0.05
+        item_total_cost = item_total_cost * VOLUME_DISCOUNT
         return item_total_cost
     else:
         return item_total_cost
@@ -61,4 +61,22 @@ def get_item_total(num_items, unit_price, discount_threshold):
 def calc_and_display_receipt(book_total, dvd_total, game_total):
     # TODO: Remove the following pass statement, then implement
     #  this function.
-    pass
+    print()
+
+    # Printing items information I already have
+    print(f"Books: ${book_total:.2f}")
+    print(f"DVDs: ${dvd_total:.2f}")
+    print(f"Games: ${game_total:.2f}")
+
+    # Print a divider line
+    print("---------------------")
+
+    # Processing values
+    subtotal = book_total + dvd_total + game_total
+    tax = subtotal * TAX_RATE
+    total = subtotal + tax
+
+    # Output
+    print(f"Subtotal: {subtotal:.2f}")
+    print(f"Tax: {tax:.2f}")
+    print(f"Amount due: {total:.2f}")
