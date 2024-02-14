@@ -1,6 +1,6 @@
 #
 # Alex Cesar Rosa
-# 2/5/2024
+# 2/12/2024
 # This program manages the scores of three students
 #
 all_scores = []
