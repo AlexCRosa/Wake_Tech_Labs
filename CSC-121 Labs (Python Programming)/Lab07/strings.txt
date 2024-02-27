@@ -1,0 +1,5 @@
+$NAME, $EMAIL, $CITY
+My name is $NAME
+My email is $EMAIL
+I live in $CITY
+$NAME is my name. My name is $NAME. $NAME! $NAME! $NAME
