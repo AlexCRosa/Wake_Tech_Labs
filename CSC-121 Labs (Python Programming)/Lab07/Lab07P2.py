@@ -30,14 +30,18 @@ def manipulate_text(line):
     print(f"Updated line: {line}")
     print(f"Number of characters in updated line: {len(line)}")
 
+    # Counting the occurrences of NAME
     count = 0
     tmp_string = line.split()
-    tmp_string = line.split(",")
-    print(f"That is the new variable {tmp_string}")
     for i in tmp_string:
-        if i == "Alex":
+        if i.startswith(NAME):
             count += 1
     print(f"Occurrences of '{NAME}': {count}")
 
+    print(f"First half of line: {line[:(int(len(line)//2))]}")
+    print(f"Second half of line: {line[(int(len(line)//2)):]}")
+
+    print(f"Line in uppercase: {line.upper()}")
+    print(f"Line in lowercase: {line.lower()}")
 
 main()
