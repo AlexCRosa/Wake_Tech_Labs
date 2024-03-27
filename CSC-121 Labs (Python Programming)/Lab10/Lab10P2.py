@@ -1,11 +1,12 @@
 #
-# Student Name
-# Date
+# Alex Cesar Rosa
+# 3/27/2024
 # Starter Code for Lab 10 Problem 2 (Remove this line before submitting)
 # Trish's Bookstore Inventory System
 #
 import pickle
 CATEGORY_LIST = ['Book', 'DVD', 'Game']
+
 
 # Review the main() function and update TODO sections.
 # Do not change any other code within main().
@@ -25,30 +26,45 @@ def main():
             item_name, item_count, unit_cost, category = get_item_input()
             # TODO - Replace pass with code that will add the item_name,
             #  item_count, and unit_cost data to the dictionaries
-            pass
+            inventory_counts[item_name] = item_count
+            inventory_costs[item_name] = unit_cost
+            inventory_categories[item_name] = category
+            print(f"{item_name} added to inventory.")
         elif response == "2":  # Display a single item
             item_name = input('Enter item name: ')
             # TODO - Replace pass with code that will display the item data
             #  from the dictionaries or display "Not found"
-            pass
+            if item_name not in inventory_counts:
+                print(f"{item_name}: Not found")
+            else:
+                print(item_name)
+                print(f"\t Count: {inventory_counts[item_name]}, Cost: {inventory_costs[item_name]}")
+                print(f"\t Category: {inventory_categories[item_name]}")
         elif response == "3":  # Display items in a category
             category_name = input('Enter category name: ')
             print(f'\nItems in {category_name}:')
             if category_name in CATEGORY_LIST:
                 # TODO - Replace pass with code that will print the names
                 #  of all the items in the category
-                pass
+                for key, value in inventory_categories.items():
+                    if value == category_name:
+                        print(f"\t {key}")
             else:
                 print(f'{category_name} not in list of categories: {CATEGORY_LIST}')
         elif response == "4":  # Delete a single item
             item_name = input('Enter item name: ')
             # TODO - Replace pass with code that will remove the item data
             #  from the dictionaries or display "Not found"
-            pass
+            if item_name not in inventory_counts:
+                print(f"{item_name}: Not Found")
+            else:
+                del(inventory_counts[item_name])
+                del(inventory_costs[item_name])
+                del(inventory_categories[item_name])
         elif response == "5":  # Display all inventory
             # TODO - Replace pass with code that will display all the inventory
             #  items - HINT Don't we already have a function that does that?
-            pass
+            display_all_inventory(inventory_counts, inventory_costs, inventory_categories)
         elif response != "0":
             print("Invalid choice. Try again.\n")
         print()
@@ -74,13 +90,40 @@ def display_all_inventory(inventory_counts, inventory_costs, inventory_categorie
     # TODO - Replace pass with code that will iterate through the dictionaries
     #  that are passed in and display the inventory. If the dictionaries are
     #  empty the display "== Empty =="
-    pass
+    if len(inventory_counts) < 1:
+        print(f"== Empty ==\n")
+    else:
+        spaces = " "
+        print("Item Name", end="      ")
+        print("Count", end="   ")
+        print("Unit Cost", end="  ")
+        print("Category")
+
+        print("---------", end="      ")
+        print("-----", end="   ")
+        print("---------", end="  ")
+        print("--------")
+
+        for key in inventory_counts.keys():
+            print(f"{key}", end=spaces * ((14 - len(key)) + (6 - len(str(inventory_counts[key])))))
+            tmp = str(inventory_costs[key]).split(".")
+            if len(tmp[1]) == 1:
+                print(f"{inventory_counts[key]}", end=spaces * (11 - len(str(inventory_costs[key]))))
+            else:
+                print(f"{inventory_counts[key]}", end=spaces * (12 - len(str(inventory_costs[key]))))
+            print(f"{inventory_costs[key]:.2f}", end=spaces * 2)
+            print(f"{inventory_categories[key]}")
+        print()
 
 
 def save_inventory_file(inventory_counts, inventory_costs, inventory_categories):
     # TODO - Replace pass with code that will save your dictionaries to
     #  inventory.dat using the pickle module.
-    pass
+    output_file = open("inventory.dat", "wb")
+    pickle.dump(inventory_counts, output_file)
+    pickle.dump(inventory_costs, output_file)
+    pickle.dump(inventory_categories, output_file)
+    output_file.close()
 
 
 def read_inventory_file():
@@ -89,7 +132,13 @@ def read_inventory_file():
     inventory_categories = {}
     # TODO - Replace pass with code that will read your dictionaries from
     #  inventory.dat using the pickle module.
-    pass
+    try:
+        output_file = open("inventory.dat", "rb")
+        inventory_counts = pickle.load(output_file)
+        inventory_costs = pickle.load(output_file)
+        inventory_categories = pickle.load(output_file)
+    except FileNotFoundError:
+        pass
     return inventory_counts, inventory_costs, inventory_categories
 
 
