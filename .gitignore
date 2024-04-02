@@ -3,4 +3,4 @@ Instructions - Writing and Running Lab Assignments.pdf
 Lab Assignment Guidelines - V1.1.docx
 *.docx
 __pycache__/
-test.py
+test*
