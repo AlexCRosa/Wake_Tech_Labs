@@ -24,6 +24,7 @@ class InventoryItem:
                 item_count = int(input('Enter the item count: '))
                 if item_count > 0:
                     self.count = item_count
+                    break
                 else:
                     print('Item count must be greater than zero.')
             except ValueError:
@@ -33,23 +34,25 @@ class InventoryItem:
         while True:
             try:
                 unit_cost = float(input('Enter the unit cost: '))
-                if unit_cost <= 0:
-                    print('Unit cost must be greater than zero.')
-                else:
+                if unit_cost > 0:
                     self.cost = unit_cost
+                    break
+                else:
+                    print('Unit cost must be greater than zero.')
             except ValueError:
                 print('Unit cost must be an integer or float.')
 
         # Get category
         while True:
             category = input('Enter the category: ')
-            if category not in CATEGORY_LIST:
-                print(f"{category} not in list of categories: {CATEGORY_LIST}")
-            else:
+            if category in CATEGORY_LIST:
                 self.category = category
+                break
+            else:
+                print(f"{category} not in list of categories: {CATEGORY_LIST}")
 
     def __str__(self):
         if len(self.name) != 0:
-            return f"{self.name}\n\tCount: {self.count}, Cost: {self.cost:.2f}\n\tCategory: {self.category}"
+            return f"{self.name}\n\tCount: {self.count}, Cost: {self.cost:.2f}\n\t{self.category}"
         else:
             return "Inventory is empty."
