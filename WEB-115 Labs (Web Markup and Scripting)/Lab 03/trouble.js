@@ -32,7 +32,7 @@ alert("3 times 4 equals " + v1 * v2);
 
             // ORANGE
             const orange = document.getElementById("orange")
-            orange.innerhtml = "ORANGE"
+            orange.innerHTML = "ORANGE"
             orange.style.backgroundColor = "orange"
 
             // YELLOW
