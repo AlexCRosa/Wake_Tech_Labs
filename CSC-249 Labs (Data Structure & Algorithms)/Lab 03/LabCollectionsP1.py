@@ -11,6 +11,9 @@ def main():
     final_scores = manage_scores(user_input)
     print(f"All scores: {final_scores}")
 
+    print("Students whose scores have changed:")
+    score_analysis(user_input, final_scores)
+
 
 def get_input():
     user_input = list()
@@ -28,6 +31,14 @@ def manage_scores(scores):
         else:
             final_scores.append(i)
     return final_scores
+
+
+def score_analysis(initial_score, final_score):
+    for i in range(5):
+        if initial_score[i] != final_score[i]:
+            print(f"Old score: {initial_score[i]} New score: {final_score[i]}")
+        else:
+            continue
 
 
 if __name__ == '__main__':
