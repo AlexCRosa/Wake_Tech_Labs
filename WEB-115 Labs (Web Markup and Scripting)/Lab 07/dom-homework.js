@@ -30,7 +30,7 @@ myDiv.appendChild(mdButton);
 mdButton.textContent = "Add new list item"
 
 // Create a random list for picking colors for text and background
-let colorsList = ["red", "blue", "green", "yellow", "pink"]
+let colorsList = ["red", "blue", "green", "yellow", "pink", "indigo", "orange", "violet"]
 
 mdButton.addEventListener("click", function() {
     // Create a new item and append it to the unordered list (ul)
@@ -39,11 +39,11 @@ mdButton.addEventListener("click", function() {
 
     // Display item text and choose a random color
     newListItem.textContent = `New List Item ${itemList.length + 1}`;
-    let randomTextColor = Math.floor(Math.random() * 5);
+    let randomTextColor = Math.floor(Math.random() * colorsList.length);
     newListItem.style.color = colorsList[randomTextColor];
 
     // Change the background color for the myDiv container
-    let randomBackgroundColor = Math.floor(Math.random() * 5);
+    let randomBackgroundColor = Math.floor(Math.random() * colorsList.length);
     myDiv.style.background = colorsList[randomBackgroundColor];
 
     // Update the item within the list 
