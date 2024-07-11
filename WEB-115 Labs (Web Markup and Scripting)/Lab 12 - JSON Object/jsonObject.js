@@ -17,7 +17,20 @@ document.getElementById("myButton").addEventListener("click", function() {
             "section": `${section}`,
             "role": `${role}`
         };
+
+        console.log(person);  // JavaScript object
+
+    //     var person = {
+    //         "firstName": firstName,
+    //         "lastName": lastName,
+    //         "course": course,
+    //         "section": section,
+    //         "role": role
+    //     };
+
+    //     var myString = JSON.stringify(person);  // JSON string
+    //     var myObject = JSON.parse(myString);  // JavaScript object
         
-        console.log(person);
+    //     console.log(myObject);
     };
 });
