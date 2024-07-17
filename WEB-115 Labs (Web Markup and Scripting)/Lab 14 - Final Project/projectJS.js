@@ -15,22 +15,35 @@ function generateMealPlan() {
 
     const newWindow = window.open("", "_blank");
 
-    const doc = newWindow.document;
+    const doc = newWindow.document;  // Defined the new window within a variable
     doc.open();
     doc.write(`<!DOCTYPE html>
         <html>
         <head>
         <title>Weekly Meal Plan</title>
+        <script src="projectJS.js" defer></script>
+
         <style>
             body { font-family: Arial, sans-serif; } 
             table { width: 100%; border-collapse: collapse; } 
             th, td { border: 1px solid black; padding: 8px; text-align: left; } 
-            th { background-color: #f2f2f2; }
+            th { background-color: #d5cde3; }
+            button { margin: 10px 5px; padding: 12px 24px; border: none;
+                    background-color: #b19cd9; color: #ffffff; cursor: pointer;
+                    border-radius: 5px; font-size: 16px; text-transform: uppercase;
+                    transition: background-color 0.3s ease; }
+            button:hover { background-color: #7ba9d3; }
         </style>
         </head>
         <body></body>
+        <footer>
+            <button type="button" onclick="printPlanner()">Print Planner</button>
+            <button type="button" onclick="downloadPlanner()">Download Planner</button>
+        </footer>
         </html>`);
     doc.close();
+
+    // 
 
     const body = doc.body;
 
@@ -43,8 +56,11 @@ function generateMealPlan() {
     body.appendChild(p);
 
     const table = doc.createElement('table');
+    table.className = "table";
     const thead = doc.createElement('thead');
+    thead.className = "thead";
     const trHead = doc.createElement('tr');
+    trHead.className = "trHead";
 
     const headers = ['Day', 'Breakfast', 'Snack 1', 'Lunch', 'Snack 2', 'Dinner'];
     for (let i = 0; i < headers.length; i++) {

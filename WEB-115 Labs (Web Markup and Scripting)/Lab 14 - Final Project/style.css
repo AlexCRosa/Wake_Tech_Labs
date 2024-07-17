@@ -11,8 +11,9 @@ header {
     text-align: center;
 }
 
-form {
-    max-width: calc(100% - 200px);
+#mealPlanForm {
+    width: calc(100% - 400px);
+    box-sizing: border-box;
     margin: 20px auto;
     padding: 20px;
     border: 3px solid #b19cd9;
@@ -21,11 +22,38 @@ form {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
 }
 
-fieldset {
+.personal-info, .meal-info {
+    width: 100%;
     margin-bottom: 20px;
     padding: 15px;
     border: 1px solid #e1d5f7;
     border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.personal-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.personal-info label, .meal-info label, .day {
+    flex-basis: 100%;
+}
+
+.personal-info input, .meal-info input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.meal-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 legend {
