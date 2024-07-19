@@ -17,10 +17,9 @@ def main():
         response = input('Enter your choice: ')
 
         if response == "1":
-            from custom_array import Array, array_actions, display_info
+            from custom_array import Array, array_actions, display_array_info
             action_response = ""
-
-            display_info()
+            display_array_info()
 
             # Ask user for an initial length of the array
             capacity = int(input("How many initial elements do you want on the array? "))
@@ -38,28 +37,33 @@ def main():
             while action_response != "0":
                 display_action_menu()
                 action_response = input('Enter your choice: ')
+                display_array_info(action_response)
                 structure = array_actions(initial_array, action_response)
 
         elif response == "2":
-            from listbag import ListBag, bag_actions
+            from listbag import ListBag, bag_actions, display_bag_info
             action_response = ""
+            display_bag_info()
 
             initial_bag = ListBag()
 
             while action_response != "0":
                 display_action_menu()
                 action_response = input('Enter your choice: ')
+                display_bag_info(action_response)
                 structure = bag_actions(initial_bag, action_response)
 
         elif response == "3":
-            from liststack import ListStack, stack_actions
+            from liststack import ListStack, stack_actions, display_stack_info
             action_response = ""
+            display_stack_info()
 
             initial_stack = ListStack()
 
             while action_response != "0":
                 display_action_menu()
                 action_response = input('Enter your choice: ')
+                display_stack_info(action_response)
                 structure = stack_actions(initial_stack, action_response)
 
         elif response == "4":

@@ -11,6 +11,30 @@ A list-based implementation of bags
 """
 
 
+def display_bag_info(action_response=None):
+    if action_response is None:
+        print("Challenging! Depending on the type of action you decide to perform, a bag becomes a challenging \n"
+              "collection to working on. A bag is a type of unordered collection.\n"
+              "However, the bag structure used for this info game is a list based approach, so the items will be\n"
+              "ordered by the magic of the built-in Python function: 'List'.\n"
+              "\nHere are some important information:\n"
+              "A bag’s interface derives from thinking about what bags can do in a real-world situation: A bag can \n"
+              "contain any objects.\n")
+
+    elif action_response == "1":
+        print("There is no much to do when adding an item to the bag. The item is just added inside the collection.\n"
+              "* The place the item was placed does not matter since the bag is a type of unordered collection.\n")
+
+    elif action_response == "2":
+        print("The remove method can be a trick method depending on the approach for searching the element. Because \n" 
+              "of the bag is not sorted, finding an item can consume a lot of time depending on the size of the bag.\n")
+
+    elif action_response == "3":
+        print("The action of checking the length of a bag may be hard depending on the used approach when creating\n"
+              "the bag. Taking advantage of the array collection may be a good decision since you keep track of the\n"
+              "logical size as you add or remove items.\n")
+
+
 def bag_actions(initial_bag, action_response):
     if action_response == "1":
         element = int(input("What element do you want to add? "))

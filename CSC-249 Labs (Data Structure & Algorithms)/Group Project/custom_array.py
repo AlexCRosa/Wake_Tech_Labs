@@ -18,8 +18,8 @@ The fill value is None by default.
 """
 
 
-def display_info(action_response="9"):
-    if action_response == "9":
+def display_array_info(action_response=None):
+    if action_response is None:
         print("\nCool! Array is the most famous type of collection.\n\n"
               "Here are some important information:\n"
               "1.	Array represents a sequence of items that can be accessed or replaced at given index positions.\n"
