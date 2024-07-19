@@ -8,7 +8,7 @@
 
 
 def main():
-    print("Welcome to the Data Structures info game!")
+    print("\nWelcome to the Data Structures info game!")
 
     response = ""
 
@@ -67,14 +67,16 @@ def main():
                 structure = stack_actions(initial_stack, action_response)
 
         elif response == "4":
-            from listqueue import ListQueue, queue_actions
+            from listqueue import ListQueue, queue_actions, display_queue_info
             action_response = ""
+            display_queue_info()
 
             initial_queue = ListQueue()
 
             while action_response != "0":
                 display_action_menu()
                 action_response = input('Enter your choice: ')
+                display_queue_info(action_response)
                 structure = queue_actions(initial_queue, action_response)
 
         elif response != "0":
@@ -84,7 +86,8 @@ def main():
 
 
 def display_main_menu():
-    print("\nWhat type of data structure do you want to learn?")
+    print("\nThis game allows the user to learn while interacting with the program.\n"
+          "First, you need to select one of the following options. What type of data structure do you want to learn?")
     print("(1) Arrays\n"
           "(2) Bags\n"
           "(3) Stacks\n"

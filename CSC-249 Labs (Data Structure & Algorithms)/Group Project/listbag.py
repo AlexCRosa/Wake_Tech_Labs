@@ -19,18 +19,18 @@ def display_bag_info(action_response=None):
               "ordered by the magic of the built-in Python function: 'List'.\n"
               "\nHere are some important information:\n"
               "A bag’s interface derives from thinking about what bags can do in a real-world situation: A bag can \n"
-              "contain any objects.\n")
+              "contain any objects.")
 
     elif action_response == "1":
-        print("There is no much to do when adding an item to the bag. The item is just added inside the collection.\n"
-              "* The place the item was placed does not matter since the bag is a type of unordered collection.\n")
+        print("\nThere is no much to do when adding an item to the bag. The item is just added inside the collection.\n"
+              "* The place the item was placed does not matter since the bag is a type of unordered collection.")
 
     elif action_response == "2":
-        print("The remove method can be a trick method depending on the approach for searching the element. Because \n" 
-              "of the bag is not sorted, finding an item can consume a lot of time depending on the size of the bag.\n")
+        print("\nThe remove method can be a trick method depending on the approach for searching the element. Because\n" 
+              "of the bag is not sorted, finding an item can consume a lot of time depending on the size of the bag.")
 
     elif action_response == "3":
-        print("The action of checking the length of a bag may be hard depending on the used approach when creating\n"
+        print("\nThe action of checking the length of a bag may be hard depending on the used approach when creating\n"
               "the bag. Taking advantage of the array collection may be a good decision since you keep track of the\n"
               "logical size as you add or remove items.\n")
 
@@ -45,9 +45,9 @@ def bag_actions(initial_bag, action_response):
         initial_bag.remove(element)
 
     elif action_response == "3":
-        print(f"The bag has {len(initial_bag)} elements.")
+        print(f"\nThe bag has {len(initial_bag)} elements.")
     elif action_response == "4":
-        print(initial_bag)
+        print("\n{initial_bag}")
     elif action_response == "5":
         initial_bag.clear()
 

@@ -6,19 +6,21 @@ A list-based implementation of stacks.
 
 def display_queue_info(action_response=None):
     if action_response is None:
-        print("Good! Queues are linear collections, and there are several implementation strategies for queues - some\n"
-              "based on arrays, and others based on linked structures.\n\n"
+        print("\nGood! Queues are linear collections, and there are several implementation strategies for queues - \n"
+              "some based on arrays, and others based on linked structures.\n\n"
               
               "Queues are omnipresent in everyday life and occur in any situation where people or things are lined\n"
-              "up for service or processing on a first-come, first-served basis.\n")
+              "up for service or processing on a first-come, first-served basis.")
+
     elif action_response == "1":
-        print("The operation of adding an item to the queue is called 'add', and the added item will always be placed\n"
-              "after the last item of the queue. The end of the queue is called 'rear'.\n")
+        print("\nThe operation of adding an item to the queue is called 'add', and the added item will always be\n"
+              "placed after the last item of the queue. The end of the queue is called 'rear'.")
+
     elif action_response == "2":
-        print("A queue supports a first-in first-out (FIFO) protocol.\n"
+        print("\nA queue supports a first-in first-out (FIFO) protocol.\n"
               "Checkout lines in stores and airport check-in lines are familiar examples of queues.\n"
               "The operation for removing items from a queue is called 'pop'. Every time a item is popped from the\n"
-              "queue, the first item of the queue is removed.\n")
+              "queue, the first item of the queue is removed.")
 
 
 def queue_actions(initial_queue, action_response):
@@ -30,9 +32,9 @@ def queue_actions(initial_queue, action_response):
         initial_queue.pop()
 
     elif action_response == "3":
-        print(f"The queue has {len(initial_queue)} elements.")
+        print(f"\nThe queue has {len(initial_queue)} elements.")
     elif action_response == "4":
-        print(initial_queue)
+        print(f"\n{initial_queue}")
     elif action_response == "5":
         initial_queue.clear()
 

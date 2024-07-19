@@ -20,33 +20,37 @@ The fill value is None by default.
 
 def display_array_info(action_response=None):
     if action_response is None:
-        print("\nCool! Array is the most famous type of collection.\n\n"
+        print("\nCool! Array is one of the most famous type of collection among programmers.\n\n"
               "Here are some important information:\n"
               "1.	Array represents a sequence of items that can be accessed or replaced at given index positions.\n"
               "2.	Each element of an array is called an item. You can access each item by providing its index.\n"
               "3.	Every array is created with a reasonable default size at program start-up. When the array cannot \n"
               "hold more data, create a new, larger array and transfer the data items from the old array. When the \n"
-              "array seems to be wasting memory, decrease its length in a similar manner.\n")
+              "array seems to be wasting memory, decrease its length in a similar manner.")
 
     elif action_response == "1":
-        print("\nIn the case of insertion:\n" 
+        print("\nIn the case of insertion a target index and the new item must be provided:\n" 
               "1. Check for available space before attempting an insertion and increase the physical size of the \n"
-              "array, if necessary, as described earlier.\n"
+              "array, if necessary.\n"
               "2. Shift the items from the logical end of the array to the target index position down by one. (This \n"
               "process opens a hole for the new item at the target index)\n"
               "3. Assign the new item to the target index position.\n"
-              "4. Increment the logical size by one\n")
+              "4. Increment the logical size by one")
 
     elif action_response == "2":
         print("\nIn the case of removing:\n"
               "1. Shift the items from the one following the target index position to the logical end of the array \n" 
               "up by one. This process closes the hole left by the removed item at the target index.\n"
               "2. Decrement the logical size by one"
-              "3. Decrease the physical size of the array, if necessary.\n")
+              "3. Decrease the physical size of the array, if necessary.")
+
+    elif action_response == "3":
+        print("\nIf you have already interacted with the array, you should notice that the size of the array may have\n"
+              "changed. It happens because if the array gets full, it will automatically increase its size. The \n"
+              "array will also decrease its size when you start removing items.\n")
 
 
 def array_actions(initial_array, action_response):
-    display_info(action_response)
     if action_response == "1":
         element_position = int(input("Please specify the index to add the item? "))
         element = int(input("What item do you want to add? "))

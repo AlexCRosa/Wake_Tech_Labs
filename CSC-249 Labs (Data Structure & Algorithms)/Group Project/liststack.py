@@ -6,23 +6,23 @@ A list-based implementation of stacks.
 
 def display_stack_info(action_response=None):
     if action_response is None:
-        print("Great! Stack is the simplest collection to describe and implement.\n"
+        print("\nGreat! Stack is the simplest collection to describe and implement.\n"
               "Stacks are linear collections in which access is completely restricted to just one end,\n"
               "called the top.\n\n"
               
-              "A classic analogous example is the stack of clean trays found in every cafeteria.\n")
+              "A classic analogous example is the stack of clean trays found in every cafeteria.")
 
     elif action_response == "1":
-        print("By using the analogous of a stack of clean trays found in every cafeteria:\n"
+        print("\nBy using the analogous of a stack of clean trays found in every cafeteria:\n"
               "Whenever a new clean tray comes back from the kitchen, it is placed on the top of the stack.\n\n"
               "The operation for putting items on is called 'push', and every time an item is pushed to the stack,\n"
-              "it is pushed after the last item of the current stack.\n")
+              "it is pushed after the last item of the current stack.")
 
     elif action_response == "2":
-        print("Stacks are said to adhere to a last-in first-out (LIFO) protocol.\n"
+        print("\nStacks are said to adhere to a last-in first-out (LIFO) protocol.\n"
               "The last tray brought back from the dishwasher is the first one a customer takes.\n\n"
               "The operation for removing items from a stack is called 'pop'. Every time a item is popped from the\n"
-              "stack, the last item of the stack is removed.\n")
+              "stack, the last item of the stack is removed.")
 
 
 def stack_actions(initial_stack, action_response):
@@ -34,9 +34,9 @@ def stack_actions(initial_stack, action_response):
         initial_stack.pop()
 
     elif action_response == "3":
-        print(f"The stack has {len(initial_stack)} elements.")
+        print(f"\nThe stack has {len(initial_stack)} elements.")
     elif action_response == "4":
-        print(initial_stack)
+        print(f"\n{initial_stack}")
     elif action_response == "5":
         initial_stack.clear()
 
