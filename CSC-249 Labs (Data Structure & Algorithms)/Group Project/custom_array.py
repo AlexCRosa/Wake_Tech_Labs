@@ -1,7 +1,6 @@
 #
-# Alex Cesar Rosa
-# 6/18/2024
-# Understand and build the Array class
+# Group: Smarty Pants
+# 7/23/2024
 #
 
 """
@@ -169,33 +168,3 @@ class Array(object):
         clonedArray.items = self.items
         clonedArray.logicalSize = self.logicalSize
         return clonedArray
-
-
-def main():
-    """Test code for modified Array class."""
-    a = Array(5)
-    print("Initial array:", a)
-    for item in range(4):
-        a.insert(0, item)
-    print("Insert 3, 2, 1, 0:", a)
-    a.insert(1, 77)
-    print("Insert 77 at index 1:", a)
-    a.insert(2, 88)
-    print("Insert 88 at index 2:", a)
-    a.insert(15, 10)
-    print("Insert 10 at index 15:", a)
-    a.insert(-1, 66)
-    print("Insert 66 at index -1:", a)
-    a.remove(3)
-    print("Remove item at index 3:", a)
-    for count in range(5):
-        a.remove(0)
-        print("Remove item at index 0:", a)
-    b = a.clone()
-    print("clone created:", b)
-    b.clear()
-    print("clone cleared:", b)
-
-
-if __name__ == "__main__":
-    main()

@@ -4,7 +4,7 @@
 #
 
 """ This program is an info game for helping the
-    user understand a few of data structures"""
+    user understand a few of data structures """
 
 
 def main():

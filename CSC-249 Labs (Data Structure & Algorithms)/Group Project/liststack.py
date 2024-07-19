@@ -1,3 +1,8 @@
+#
+# Group: Smarty Pants
+# 7/23/2024
+#
+
 """
 File: liststack.py
 A list-based implementation of stacks.
@@ -9,7 +14,7 @@ def display_stack_info(action_response=None):
         print("\nGreat! Stack is the simplest collection to describe and implement.\n"
               "Stacks are linear collections in which access is completely restricted to just one end,\n"
               "called the top.\n\n"
-              
+
               "A classic analogous example is the stack of clean trays found in every cafeteria.")
 
     elif action_response == "1":
@@ -45,7 +50,7 @@ def stack_actions(initial_stack, action_response):
 
 class ListStack(object):
     # Constructor
-    def __init__(self, sourceCollection = None):
+    def __init__(self, sourceCollection=None):
         """Sets the initial state of self, which includes the
         contents of sourceCollection, if it's present."""
         self.items = list()
@@ -58,7 +63,7 @@ class ListStack(object):
     def isEmpty(self):
         """Returns True if the stack is empty, or False otherwise."""
         return len(self.items) == 0
-    
+
     def __len__(self):
         """Returns the number of items in the stack."""
         return len(self.items)
@@ -73,7 +78,6 @@ class ListStack(object):
         for item in self.items:
             yield item
 
-
     def __add__(self, other):
         """Returns a new stack containing the contents
         of self and other."""
@@ -81,7 +85,6 @@ class ListStack(object):
         for item in other:
             new_stack.append(item)
         return ListStack(new_stack)
-
 
     def __eq__(self, other):
         """Returns True if self equals other,
@@ -114,63 +117,3 @@ class ListStack(object):
         old_item = self.items[len(self.items) - 1]
         self.items.pop()
         return old_item
-
-
-def main():
-    lyst = [8, 2, 4, 7, 6, 1]
-    print("The list of items added is:", lyst)
-    b = ListStack(lyst)
-    print("The stack's size:", len(b))
-    print("The stack's string:", b)
-    print()
-
-    print("Pop")
-    print("Item popped:", b.pop())
-    print("The stack's string:", b)
-    print()
-    print("c = ListStack(b)")
-
-    print("Push 5")
-    b.push(5)
-    print("The stack's string:", b)
-    print()
-    print("Item at top:", b.peek())
-    print("The stack's string:", b)
-    print()
-
-    print("Push 3")
-    b.push(3)
-    print("The stack's string:", b)
-    print()
-    print("Item at top:", b.peek())
-    print("The stack's string:", b)
-    print()
-
-    print("Pop")
-    print("Item popped:", b.pop())
-    print("The stack's string:", b)
-    print()
-    print("c = ListStack(b)")
-
-    c = ListStack(b)
-    print("b == c?", b == c)
-    print()
-
-    print("d = ListStack([1, 2, 3, 4, 5, 6])")
-    d = ListStack([1, 2, 3, 4, 5, 6])
-    print("b == d?", b == d)
-    print()
-
-    print("e = b + d")
-    e = b + d
-    print("Stack e's string:", e)
-    print("Is e empty?", e.isEmpty())
-    print()
-
-    e.clear()
-    print("Clear e")
-    print("Is e empty?", e.isEmpty())
-    print("Stack e's string:", e)
-
-if __name__ == "__main__":
-    main()

@@ -1,3 +1,8 @@
+#
+# Group: Smarty Pants
+# 7/23/2024
+#
+
 """
 File: listqueue.py
 A list-based implementation of stacks.
@@ -113,44 +118,3 @@ class ListQueue(object):
         self.items.pop(0)
 
         return old_item
-
-
-def main():
-    lyst = [8, 2, 4, 7, 6, 1]
-    print("The list of items added is:", lyst)
-    b = ListQueue(lyst)
-    print("The queue's size:", len(b))
-    print("The queue's string:", b)
-    print()
-
-    print("Add 5")
-    b.add(5)
-    print("The queue's string:", b)
-    print()
-    print("Peek")
-    print("Item at front of the queue:", b.peek())
-    print("The queue's string:", b)
-    print()
-    print("Pop")
-    print("Item popped:", b.pop())
-    print("The queue's string:", b)
-    print()
-    print("c = ListQueue(b)")
-    c = ListQueue(b)
-    print("b == c?", b == c)
-    print()
-    print("d = ListQueue([1, 2, 3, 4, 5, 6])")
-    d = ListQueue([1, 2, 3, 4, 5, 6])
-    print("b == d?", b == d)
-    print()
-    print("e = b + d")
-    e = b + d
-    print("Queue e's string:", e)
-    print("Is e empty?", e.isEmpty())
-    e.clear()
-    print("Clear e")
-    print("Is e empty?", e.isEmpty())
-    print("The queue's string:", e)
-
-if __name__ == "__main__":
-    main()
