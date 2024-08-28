@@ -12,3 +12,4 @@ DBA-120 Labs (Database Programming I)/- Scripts
 *.pdf
 *.mp4
 *.png
+.venv/
