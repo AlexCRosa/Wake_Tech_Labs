@@ -20,17 +20,8 @@ document.getElementById("myButton").addEventListener("click", function() {
 
         console.log(person);  // JavaScript object
 
-    //     var person = {
-    //         "firstName": firstName,
-    //         "lastName": lastName,
-    //         "course": course,
-    //         "section": section,
-    //         "role": role
-    //     };
-
-    //     var myString = JSON.stringify(person);  // JSON string
-    //     var myObject = JSON.parse(myString);  // JavaScript object
+        var myString = JSON.stringify(person, null, 2);  // JSON string
+        console.log(myString);
         
-    //     console.log(myObject);
     };
 });
